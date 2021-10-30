@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "1-hello"
+		},
+		{
+			"path": "2-integers"
+		}
+	],
+	"remoteAuthority": "wsl+Ubuntu-20.04",
+	"settings": {}
+}
