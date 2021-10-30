@@ -35,22 +35,24 @@ func BenchmarkSum(b *testing.B) {
 }
 
 func TestSumAll(t *testing.T) {
-	t.Run("one slice as argument", func(t *testing.T) {
-		got := SumAll([]int{1, 2, 3}, []int{4, 5, 6})
-		want := []int{6, 15}
 
+	checkSums := func(t testing.TB, got, want []int) {
+		t.Helper()
 		if !reflect.DeepEqual(got, want) {
 			t.Errorf("want '%d' but got '%d'", want, got)
 		}
+	}
+
+	t.Run("make sum of some slices", func(t *testing.T) {
+		got := SumAllTails([]int{1, 2, 3}, []int{4, 5, 6})
+		want := []int{5, 11}
+		checkSums(t, got, want)
 	})
 
-	t.Run("variable number of slices as arguments", func(t *testing.T) {
-		got := SumAll([]int{1, 2, 3})
-		want := []int{6}
-
-		if !reflect.DeepEqual(got, want) {
-			t.Errorf("want '%d' but got '%d'", want, got)
-		}
+	t.Run("make sunm of empty slice", func(t *testing.T) {
+		got := SumAllTails([]int{})
+		want := []int{0}
+		checkSums(t, got, want)
 	})
 }
 
