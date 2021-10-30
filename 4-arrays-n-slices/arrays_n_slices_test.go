@@ -56,21 +56,21 @@ func TestSumAll(t *testing.T) {
 	})
 }
 
-// func ExampleSumAll() {
-// 	numbersA := []int{1, 2, 3}
-// 	numbersB := []int{4, 5, 6}
+func ExampleSumAllTails() {
+	numbersA := []int{1, 2, 3}
+	numbersB := []int{4, 5, 6}
 
-// 	sum := SumAll(numbersA, numbersB)
+	sums := SumAllTails(numbersA, numbersB)
 
-// 	fmt.Println(sum)
+	fmt.Printf("%v", sums)
 
-// 	// Output: 21
-// }
+	// Output: [5 11]
+}
 
-// func BenchmarkSumAll(b *testing.B) {
-// 	numbersA := []int{1, 2, 3}
-// 	numbersB := []int{4, 5, 6}
-// 	for i := 0; i < b.N; i++ {
-// 		SumAll(numbersA, numbersB)
-// 	}
-// }
+func BenchmarkSumAllTails(b *testing.B) {
+	numbersA := []int{1, 2, 3}
+	numbersB := []int{4, 5, 6}
+	for i := 0; i < b.N; i++ {
+		SumAllTails(numbersA, numbersB)
+	}
+}
