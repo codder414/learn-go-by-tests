@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"reflect"
 	"testing"
 )
 
@@ -32,3 +33,42 @@ func BenchmarkSum(b *testing.B) {
 	}
 
 }
+
+func TestSumAll(t *testing.T) {
+	t.Run("one slice as argument", func(t *testing.T) {
+		got := SumAll([]int{1, 2, 3}, []int{4, 5, 6})
+		want := []int{6, 15}
+
+		if !reflect.DeepEqual(got, want) {
+			t.Errorf("want '%d' but got '%d'", want, got)
+		}
+	})
+
+	t.Run("variable number of slices as arguments", func(t *testing.T) {
+		got := SumAll([]int{1, 2, 3})
+		want := []int{6}
+
+		if !reflect.DeepEqual(got, want) {
+			t.Errorf("want '%d' but got '%d'", want, got)
+		}
+	})
+}
+
+// func ExampleSumAll() {
+// 	numbersA := []int{1, 2, 3}
+// 	numbersB := []int{4, 5, 6}
+
+// 	sum := SumAll(numbersA, numbersB)
+
+// 	fmt.Println(sum)
+
+// 	// Output: 21
+// }
+
+// func BenchmarkSumAll(b *testing.B) {
+// 	numbersA := []int{1, 2, 3}
+// 	numbersB := []int{4, 5, 6}
+// 	for i := 0; i < b.N; i++ {
+// 		SumAll(numbersA, numbersB)
+// 	}
+// }
