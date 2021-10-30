@@ -5,6 +5,12 @@
 		},
 		{
 			"path": "2-integers"
+		},
+		{
+			"path": "3-iteration"
+		},
+		{
+			"path": "4-arrays-n-slices"
 		}
 	],
 	"remoteAuthority": "wsl+Ubuntu-20.04",
