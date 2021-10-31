@@ -14,6 +14,9 @@
 		},
 		{
 			"path": "5-structs-methods-interfaces"
+		},
+		{
+			"path": "6-pointers-n-errors"
 		}
 	],
 	"remoteAuthority": "wsl+Ubuntu-20.04",
