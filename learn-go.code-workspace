@@ -11,6 +11,9 @@
 		},
 		{
 			"path": "4-arrays-n-slices"
+		},
+		{
+			"path": "5-structs-methods-interfaces"
 		}
 	],
 	"remoteAuthority": "wsl+Ubuntu-20.04",
